@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<style>
+body{
+margin: 0%;
+padding: 0%;
+background-color: black;
+}
+.clock{
+position: relative;
+top: 170px;
+left: 420px;
+font-size: 45px;
+border: 5px solid gray;
+width: 330px;
+height: 120px;
+line-height: 120px;
+padding-left: 50px;
+box-shadow: 12px 20px 20px aqua;
+color: white;
+}
+
+
+
+
+</style>
+    
+<h1 style="color: bisque; font-style: italic;">By Saqibali</h1>
+
+<div id="showtime" class="clock"> 
+   
+</div>
+<script>
+function display(){
+var date=new Date();
+var h=date.getHours();
+var m=date.getMinutes();
+var s=date.getSeconds();
+var session="AM";
+if(h>12){
+    h=h-12;
+    session="PM"
+}
+if(h==12){
+    h=12;
+}
+if(h<10){
+    h="0"+h;
+}
+
+if(m<10){
+    m="0"+m;
+}
+if(s<10){
+    s="0"+s;
+}
+
+
+var time=h+':'+m+':'+s+" "+session;
+document.getElementById("showtime").innerText=time;
+document.getElementById("showtime").textContent=time;
+
+}
+setInterval(display,500);
+
+</script>
+
+</body>
+</html>
